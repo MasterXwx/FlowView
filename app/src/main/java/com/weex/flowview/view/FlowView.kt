@@ -169,7 +169,10 @@ class FlowView : View {
                 canvas!!.drawText(mFlowData[index], startX + mLeftPadding + mFlowTextPadding, startY + mFlowTextPadding + (Math.abs(fontMetrics.bottom) - fontMetrics.top) / 2, mPaint)
                 startX += mLeftPadding + mFlowTextPadding * 2 + textWidth + mRightPadding
 
-                canvas.drawLine(startX, textHeight / 2 + mFlowTextPadding + mTopPadding, startX + mCombineLength, textHeight / 2 + mFlowTextPadding + startY, combinePaint)
+                if(index != mFlowData.size - 1){
+                    canvas.drawLine(startX, textHeight / 2 + mFlowTextPadding + mTopPadding, startX + mCombineLength, textHeight / 2 + mFlowTextPadding + startY, combinePaint)
+                }
+
                 startX += mCombineLength
             }
         } else {
